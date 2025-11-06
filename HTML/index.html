@@ -83,22 +83,22 @@
                         <td class="px-1 border-left t-align-right">30~70</td>
                         <td class="px-1 border-left t-align-right">10~25 ns</td>
                     </tr>
-                    <tr>
+                    <tr class="t-light-gray">
                         <td class="px-1 align-items-center">内存</td>
                         <td class="px-1 border-left t-align-right">180~360</td>
                         <td class="px-1 border-left t-align-right">60~120 ns</td>
                     </tr>
-                    <tr>
+                    <tr class="t-invert-light">
                         <td class="px-1 align-items-center">固态硬盘</td>
                         <td class="px-1 border-left t-align-right">240,000~900,000</td>
                         <td class="px-1 border-left t-align-right">80~300 μs</td>
                     </tr>
-                    <tr>
+                    <tr class="t-invert-dark">
                         <td class="px-1 align-items-center">机械硬盘</td>
                         <td class="px-1 border-left t-align-right">41,000,000</td>
                         <td class="px-1 border-left t-align-right">14 ms</td>
                     </tr>
-                    <tr>
+                    <tr class="t-invert-black">
                         <td class="px-1 align-items-center">互联网</td>
                         <td class="px-1 border-left t-align-right">240,000,000</td>
                         <td class="px-1 border-left t-align-right">80 ms</td>
@@ -254,7 +254,7 @@
             </ul>
             <div class="align-items-center">
                 <img src="files/basics/Pay-For-HEVC-Windows.webp" alt="Pay-For-HEVC-Windows" class="img-medium">
-                <p class="text-gray-side mt-0">图：Windows 文件管理器预览 HEVC 编码视频、HEIF 图像的组件，定价 $0.99 USD。通过让用户支付这比费用，微软以“产品默认不包含”而绕过了 HEVC 的专利费。</p>
+                <p class="text-gray-side mt-0">图：Windows 文件管理器预览 HEVC 编码视频、HEIF 图像的组件，定价 $0.99 USD。通过让用户支付这比费用。<br>微软以“产品默认不包含”而绕过了 HEVC 的专利费。</p>
             </div>
 
             <h3>数据大小单位</h3>
@@ -330,15 +330,11 @@
 
             <h3>亮度</h3>
             <ul class="overflow-auto">
-                <li><b>物理亮度</b>：可见光电磁波的强度或振幅，以流明 lumen/lm，坎德拉/烛光量 candela/cd，或尼特 nits/cdm<sup>2</sup> 计量：
+                <li><b>物理亮度</b>：可见光电磁波的强度或振幅，以流明 lumen/lm，坎德拉/烛光 candela/cd，或尼特 nits/cdm<sup>2</sup> 计量：
                     <ul class="text-gray-side">
-                        <li>1cd/lm 大约为一支普通蜡烛的亮度。</li>
-                        <li>由于是强度，一般来说，灯泡电压越高、火药能量密度越高，发光就越明亮
-                            <ul>
-                                <li>因此定义：能量和光强/光压的相关性呈正比</li>
-                            </ul>
-                        </li>
-                        <li>Nits 代表 1cd 光源投射到一平方米（一般情况下距离一米）区域后所剩的亮度，主要用于显示器的亮度设定。一般来说，<span class="text-blue-math">1 nit ≈ 3.426 lm</span>，但实际的换算关系取决于光源和测量仪器的不同与误差。</li>
+                        <li>1cd/lm 大约为一支蜡烛的亮度</li>
+                        <li>由于能量（电压、焦耳）与亮度正相关，所以往往被直接称为i“能量”</li>
+                        <li>尼特代表 1cd 光源投射到一平方米（一般情况下距离一米）区域后所剩的亮度，主要用于显示器的亮度设定。一般来说，<span class="text-blue-math">\(1 \{nit} \approx 3.426 \{lm}\)</span>，但实际的换算关系取决于光源和测量仪器的不同与误差</li>
                     </ul>
                 </li>
                 <li><b>软硬件亮度</b>：代表灰度像素值的大小，值越大表示像素点越亮，但最大亮度受硬件和用户设定限制。伽马 gamma/Y 值定义了像素的亮度范围，最小值 0 为黑色：
@@ -366,7 +362,7 @@
             </ul>
 
             <h3>软件的色深 Depth 与范围 Range</h3>
-            <p>数字色深的分阶用位/bit 表示。如四位 4bit 16 深 <span class="text-blue-math">\( 2^4 \)</span>、八位 8bit 256 深 <span class="text-blue-math">\( 2^8 \)</span>、10bit 1024 深 <span class="text-blue-math">\( 2^{10} \)</span> 的形式表示。</p>
+            <p>数字色深的分阶用位/bit 表示。如四位 4bit（16 单位）<span class="text-blue-math">\(2^4\)</span>、八位 8bit（256 单位）<span class="text-blue-math">\(2^8\)</span>、10bit（1024 单位）<span class="text-blue-math">\(2^{10}\)</span> 的形式表示。</p>
             <div class="align-items-center">
                 <img src="files/basics/Full-and-Limited-Range.png" alt="Full-and-Limited-Range" class="img-medium">
                 <p class="text-gray-side mt-0">图：完整色深 Fullrange 与有限/TV 色深 Limited，包括上述说明的更优版本见<a href="https://www.youtube.com/watch?v=8sAJWtgQ2t8">硬件茶谈</a>。</p>
@@ -466,7 +462,7 @@
             <p>在 DVD、蓝光播放机上，用户可以方便地通过遥控器调整；电脑麻烦些，需要通过调节显示器的 OSD 菜单，或下载第三方插件，或在播放器软件中按快捷键调节；智能手机可以通过显示色彩模式和第三方软件调节，但罕有播放器支持对比度调节，因此体验最差。</p>
 
             <h3>饱和度 Saturation</h3>
-            <p>一般指液体在特定压力和温度下溶解了某种成分的程度，达到最高时会沉积而不再溶解。图像中则代表颜色接近 100% 纯色的程度或“彩度”，饱和度越高则图像越鲜艳，为零时得到灰阶图像；最大时得到纯色图像。对比度接近饱和度，但不是饱和度。</p>
+            <p>一般指液体在特定压力和温度下溶解了某种成分的程度，达到最高时会沉积而不再溶解。图像中则代表颜色接近 100% 纯色的程度或“彩度”，饱和度越高则图像越鲜艳，为零时得到灰阶图像；最大时得到纯色图像。对比度接近饱和度，但不是饱和度，从图中可见并没有白色溢出。</p>
             <div class="align-items-center">
                 <img src="files/basics/Saturation.webp" alt="Saturation" class="img-medium">
                 <p class="text-gray-side mt-0">图：饱和度，来源：<a href="https://developer.apple.com/documentation/accelerate/adjusting-saturation-and-applying-tone-mapping">developer.apple.com</a>。</p>
@@ -475,12 +471,20 @@
             <h3>像素 Pixel / pix / pel / px</h3>
             <p>像素是组成图像的最小单位，决定了图像的物理大小和分辨率。一般情况下分为屏幕的硬件像素大小，和图片/视频的软件像素大小两种。当软件像素小于硬件像素时，显示 100% 大小的图片会变小，或者通过缩放滤镜将图片放大以适应屏幕。反之，若硬件像素大小小于软件像素，则会使用缩放滤镜将图片缩小至合适的尺寸，或者图片会溢出屏幕。图像中的每个像素都有位置和颜色两份信息。</p>
 
+            
+
             <h3>每英寸像素 Pixel Per Inch / PPI</h3>
             <p>指屏幕或印刷设备上的物理像素密度，这取决于设计时预期的观看距离。屏幕的 PPI 高则适合近距离观看，因为物理像素更密集。在印刷设备的 PPI 越高，打印出的图像就越细腻。软件的 PPI 主要用于计算新建图像的像素大小和分辨率，以确保图像有着适当的大小和清晰度。</p>
             <ul class="text-gray-side overflow-auto">
                 <li>矢量图形通常不涉及 PPI 概念，因为它们以数学方式描述图像，可以无限放大而不失真</li>
                 <li>高 PPI 的显示器是一种较新的规格，旧的软件在这些显示器上会出现模糊，或界面过小的问题，见<a href="https://www.youtube.com/watch?v=jfAH4Ym5D6Q">硬件茶谈</a></li>
             </ul>
+            <div class="align-items-center">
+                <img src="files/basics/ppi.svg" alt="PPI" class="img-medium">
+                <p class="text-gray-side mt-0">图：每英寸像素，来源：<a href="https://www.inchcalculator.com/ppi-calculator/">www.inchcalculator.com</a>。</p>
+            </div>
+
+
             <!--<h3>位图 Bitmap 与矢量图 Vector</h3>
             <p>位图使用像素和元数据（例如 n 个像素后换行）来表示图像。每个像素都包含特定的颜色信息，通常表示为 RGB 或 YCbCr 值。用于描述照片和复杂图像，但当放大时会失真，因为像素的信息已经固定，而放大只是用滤镜在其中插值填空的结果。</p>
             <p>矢量图使用图形函数与代码来描述图像（如 JavaFX，SVG）。它们以函数定义图像的形状、线条和颜色。放大矢量图不会失真，且可以在不同的尺寸和分辨率下保持清晰度：
@@ -534,7 +538,7 @@
                 <img src="files/basics/RGB-to-YCbCr-to-RGB.png" alt="RGB-to-YCbCr-to-RGB" id="LR-UD-002" class="img-small img-right col-2 mb-auto">
             </div>
             <p>RGB 色彩空间由红色 Red、绿色 Green、蓝色 Blue 三个通道组成，每个通道的数值表示相应颜色的强度，对应着显示器红色 LED，绿色 LED 和蓝色 LED。常用于显示器、摄像头和图形处理等硬件和软件系统中。</p>
-            <p>YUV/YCbCr 色彩空间是另一种常见的色彩表示方式，用于存储和传输视频数据。Y 代表亮度 Luminance，而 U、V 代表色度 Chrominance。YCbCr 特指数字信号，YUV 特指模拟信号，再无区别。由于后者字数更少且不需要频繁切换大小写，打字更容易，所以 YUV 拼写后来逐渐被当做讨论用的“平替”。</p>
+            <p>YUV/YCbCr 色彩空间是另一种常见的色彩表示方式，用于存储和传输视频数据。Y 代表亮度 Luminance，而 U、V 代表色度 Chrominance。严格的说，YCbCr 特指数字信号，YUV 特指模拟信号，但由于后者字数更少且打字容易，所以现在常被混为一谈了。</p>
             <table class="table-center">
                 <thead>
                     <tr>
