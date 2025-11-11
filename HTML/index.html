@@ -331,10 +331,11 @@
             <h3>亮度</h3>
             <ul class="overflow-auto">
                 <li><b>物理亮度</b>：可见光电磁波的强度或振幅，以流明 lumen/lm，坎德拉/烛光 candela/cd，或尼特 nits/cdm<sup>2</sup> 计量：
-                    <ul class="text-gray-side">
+                    <ul>
                         <li>1cd/lm 大约为一支蜡烛的亮度</li>
                         <li>由于能量（电压、焦耳）与亮度正相关，所以往往被直接称为i“能量”</li>
-                        <li>尼特代表 1cd 光源投射到一平方米（一般情况下距离一米）区域后所剩的亮度，主要用于显示器的亮度设定。一般来说，<span class="text-blue-math">\(1 \{nit} \approx 3.426 \{lm}\)</span>，但实际的换算关系取决于光源和测量仪器的不同与误差</li>
+                        <li>尼特代表 1cd 光源投射到一平方米（一般情况下距离一米）区域后所剩的亮度，主要用于显示器的亮度设定</li>
+                        <li>一般来说 <span class="text-blue-math">\(1 \text{nit} \approx 3.426 \text{lm}\)</span>，但实际的“汇率”取决于光源和测量仪器/方法</li>
                     </ul>
                 </li>
                 <li><b>软硬件亮度</b>：代表灰度像素值的大小，值越大表示像素点越亮，但最大亮度受硬件和用户设定限制。伽马 gamma/Y 值定义了像素的亮度范围，最小值 0 为黑色：
@@ -780,7 +781,7 @@
                             <td class="px-1 t-light-gray">24×3 中取 8×3</td>
                             <td class="px-1"> </td>
                             <td class="px-1 t-light-gray"> </td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
                             <td class="px-1"> </td>
                             <td class="px-1">仅 1bit</td>
                         </tr>
@@ -789,27 +790,27 @@
                             <td class="px-1 t-light-gray">8 <span class="text-lightgray">8 8</span></td>
                             <td class="px-1">8 <span class="text-lightgray">8 8</span></td>
                             <td class="px-1 t-light-gray"> </td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
                             <td class="px-1"> </td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
                         </tr>
                         <tr class="border-bottom">
                             <td class="px-1">jpg-XR（兼容 jpg）</td>
                             <td class="px-1 t-light-gray">32 <span class="text-lightgray">32 32</span></td>
                             <td class="px-1">8 <span class="text-lightgray">8 8</span></td>
                             <td class="px-1 t-light-gray">16 <span class="text-lightgray">16 16 16</span></td>
-                            <td class="px-1">√</td>
-                            <td class="px-1">√</td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
+                            <td class="px-1">✓</td>
+                            <td class="px-1">✓</td>
                         </tr>
                         <tr class="border-bottom">
                             <td class="px-1">avif，heif/heic，filf</td>
                             <td class="px-1 t-light-gray">32 <span class="text-lightgray">32 32</span></td>
                             <td class="px-1">16 <span class="text-lightgray">16 16</span></td>
                             <td class="px-1 t-light-gray"> </td>
-                            <td class="px-1">√</td>
-                            <td class="px-1">√</td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
+                            <td class="px-1">✓</td>
+                            <td class="px-1">✓</td>
                         </tr>
                         <tr class="border-bottom">
                             <td class="px-1 t-invert-light">无损</td>
@@ -819,7 +820,7 @@
                             <td class="px-1 t-light-gray">32 <span class="text-lightgray">32 32 32</span></td>
                             <td class="px-1">仅 mng</td>
                             <td class="px-1"> </td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
                         </tr>
                         <tr class="border-bottom">
                             <td class="px-1 t-invert-light">有损~无损~未压</td>
@@ -828,8 +829,8 @@
                             <td class="px-1">8 <span class="text-lightgray">8 8</span></td>
                             <td class="px-1 t-light-gray">128 <span class="text-lightgray">128 128 128</span></td>
                             <td class="px-1"> </td>
-                            <td class="px-1">√</td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
+                            <td class="px-1">✓</td>
                         </tr>
                         <tr class="border-bottom">
                             <td class="px-1 t-invert-dark" rowspan="2">未压缩</td>
@@ -838,16 +839,16 @@
                             <td class="px-1"> </td>
                             <td class="px-1 t-light-gray"> </td>
                             <td class="px-1">仅 raw</td>
-                            <td class="px-1">√</td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
+                            <td class="px-1">✓</td>
                         </tr>
                         <tr>
                             <td class="px-1">dpx</td>
                             <td class="px-1 t-light-gray">64 <span class="text-lightgray">64 64</span></td>
                             <td class="px-1">16 <span class="text-lightgray">16 16</span></td>
                             <td class="px-1 t-light-gray"> </td>
-                            <td class="px-1">√</td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
+                            <td class="px-1">✓</td>
                             <td class="px-1"> </td>
                         </tr>
                     </tbody>
@@ -880,12 +881,12 @@
                             <td class="px-1">rawvideo</td>
                             <td class="px-1 t-light-gray">32 <span class="text-lightgray">32 32</span></td>
                             <td class="px-1"> </td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
                         </tr>
                         <tr class="border-bottom">
                             <td class="px-1"><a href="https://github.com/marksfink/cfenc">cineform</a></td>
                             <td class="px-1 t-light-gray">16 <span class="text-lightgray">16 16</span></td>
-                            <td class="px-1">√</td>
+                            <td class="px-1">✓</td>
                             <td class="px-1"> </td>
                         </tr>
                         <tr>
@@ -2331,16 +2332,7 @@
             </ul>
 
             <h2 id="h2-15">色彩信息</h2>
-            <p>重复一开始说明的物理亮度：可见光电磁波的强度或振幅，以流明 lumen/lm，坎德拉/烛光量 candela/cd，或尼特 nits/cdm<sup>2</sup> 计量：</p>
-            <ul class="text-gray-side">
-                <li>1cd/lm 大约为一支普通蜡烛的亮度。</li>
-                <li>由于是强度，一般来说，灯泡电压越高、火药能量密度越高，发光就越明亮
-                    <ul>
-                        <li>因此定义：能量和光强/光压的相关性呈正比</li>
-                    </ul>
-                </li>
-                <li>Nits 代表 1cd 光源投射到一平方米（一般情况下距离一米）区域后所剩的亮度，主要用于显示器的亮度设定。一般来说，<span class="text-blue-math">1 nit ≈ 3.426 lm</span>，但实际的换算关系取决于光源和测量仪器的不同与误差。</li>
-            </ul>
+            <p>（重复上述科普内容）<b>物理亮度</b>：可见光电磁波的强度或振幅，以流明 lumen/lm，坎德拉/烛光量 candela/cd，或尼特 nits/cdm<sup>2</sup> 计量：<span class="text-blue-math">\(1 {nit} \approx 3.426 \text{lm}\)</span>。</p>
             <!-- x265 教程副本，更改需手动同步 {-->
             <h3>高动态范围 High Dynamic Range HDR</h3>
             <p>原本是高端音响的标准，代表最小音量下没有一点电流噪声，最大音量可以和真实场景媲美的性能。与扬声器的大小和材质是否匹配场景相关，即「重硬件轻软件」。因为只要硬件达到 HDR 1000 规格，那么只要调高亮度就可以了；而随便一个中位水平的电视/显示器/手机屏幕亮度都能达到 HDR 400 标准。</p>
@@ -2376,7 +2368,7 @@
 
             <h3>Video Usability Information（VUI 元数据）</h3>
             <p>VUI 是元数据，播放器会读取这些元数据来选择特定的色彩空间播放视频，由于 HDR 视频的标准受到厂商竞争割据等因素，用户需要手动指定 HDR 参数到 VUI 中才能正确播放（不过，有时电视厂商会为了节省成本而只读取一小部分信息，如只读取 MaxCLL 和 MaxFall）。</p>
-            <p>光强/光压 Candela 等于尼特，即<span class="text-blue-math">\(1 \text{cd} = 1 \text{nit}\)</span>。因 bt601，709，HDR-PQ，HLG 标准重视的亮度范围，曲线所异（偏亮或偏暗），故需要量化曲线，心理学优化，模式决策的重适配。</p>
+            <p>光强/光压 Candela 等于尼特，即 <span class="text-blue-math">\(1 \text{cd} = 1 \text{nit}\)</span>。因 bt601，709，HDR-PQ，HLG 标准重视的亮度范围，曲线所异（偏亮或偏暗），故需要量化曲线，心理学优化，模式决策的重适配。</p>
             <code class="code-bold">--cll</code>
             <p class="font-monospace pl-5 m-0 overflow-auto">&lt;最大内容光强，最大平均光强&gt;压制 HDR 源一定照源视频信息设，找不到不要用，见上图例。</p>
             <!-- x265 教程副本，更改需手动同步 {-->
