@@ -2532,44 +2532,44 @@
                 </table>
             </div>
             <code class="code-bold">--tune</code>
-            <p class="font-monospace pl-5 m-0 overflow-auto">&lt;zerolatency/animation/grain/film/fastdecode/psnr/ssim&gt;更改 preset 的一些参数，见下：</p>
+            <p class="font-monospace pl-5 m-0 overflow-auto">&lt;字符串&gt;更改 preset 的一些参数，见下：</p>
             <ul class="font-monospace pl-5 text-smaller">
-                <li><span class="text-blue-emph">zerolatency</span>集中算力到一次编码一帧，并尽可能关闭率控制和 B 帧功能：
+                <li><span class="text-blue-emph">zerolatency</span> 集中算力到一次编码一帧，并尽可能关闭率控制和 B 帧功能：
                     <ul>
                         <li><code>--bframes 0 --force-cfr --no-MBTree --sync-lookahead 0 --sliced-threads --rc-lookahead 0</code></li>
                     </ul>
                 </li>
-                <li><span class="text-blue-emph">grain</span>保留高频信号/最高画质：
+                <li><span class="text-blue-emph">grain</span> 保留高频信号/最高画质：
                     <ul>
                         <li><code>--deblock -2:-2 --psy-rd &lt;跳过&gt;:0.25 --aq-strength 0.5 --no-dct-decimate --deadzone-inter 6 --deadzone-intra 6 --ipratio 1.1 --pbratio 1.1 --qcomp 0.8</code></li>
                     </ul>
                 </li>
-                <li><span class="text-blue-emph">animation</span>优化动漫场景画面：
+                <li><span class="text-blue-emph">animation</span> 优化动漫场景画面：
                     <ul>
                         <li><code>--ref &lt;若当前设定大于 1 则乘以 2&gt; --bframes &lt;当前设定值 +=2&gt; --deblock 1:1 --psy-rd 0.4:&lt;跳过&gt; --aq-strength 0.6</code></li>
                     </ul>
                 </li>
-                <li><span class="text-blue-emph">fastdecode</span>降低解码算力占用以降低超高帧率——分辨率解码负载
+                <li><span class="text-blue-emph">fastdecode</span> 降低解码算力占用以降低超高帧率——分辨率解码负载
                     <ul>
                         <li><code>--no-deblock --no-cabac --no-weightb --weightp 0</code></li>
                     </ul>
                 </li>
-                <li><span class="text-blue-emph">film</span>优化录像与电影场景画面
+                <li><span class="text-blue-emph">film</span> 优化录像与电影场景画面
                     <ul>
                         <li><code>--deblock -1:-1 --psy-rd &lt;跳过&gt;:0.15</code></li>
                     </ul>
                 </li>
-                <li><span class="text-blue-emph">stillinage</span>优化静态图像画面
+                <li><span class="text-blue-emph">stillimage</span> 优化静态图像画面
                     <ul>
                         <li><code>--deblock -3:-3 --psy-rd 2.0:0.7 --aq-strength 1.2</code></li>
                     </ul>
                 </li>
-                <li><span class="text-blue-emph">psnr</span>尽可能降低编码结果和原画的均方差 MSE 差异，但与画质关系不大
+                <li><span class="text-blue-emph">psnr</span> 减少编码前后内容的均方差（MSE）变化/失真（客观画质），同时关闭率失真优化的心理学优化功能（降低客观画质，提升主观画质）
                     <ul>
                         <li><code>--aq-mode 0 --no-psy</code></li>
                     </ul>
                 </li>
-                <li><span class="text-blue-emph">ssim</span>比 <code>--tune psnr</code> 缓和一些
+                <li><span class="text-blue-emph">ssim</span> 减少编码前后内容的结构性变化/失真（客观画质），同时关闭率失真优化的心理学优化功能（降低客观画质，提升主观画质）
                     <ul>
                         <li><code>--aq-mode 2 --no-psy</code></li>
                     </ul>
