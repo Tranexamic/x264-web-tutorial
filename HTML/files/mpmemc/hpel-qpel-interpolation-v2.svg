@@ -1,0 +1,118 @@
+<svg viewBox="0 0 500 578" preserveAspectRatio="xMidYMid meet"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <radialGradient id="gradLarge" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </radialGradient>
+
+    <radialGradient id="gradHalf" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </radialGradient>
+
+    <radialGradient id="gradQuarter" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#fa709a"/>
+      <stop offset="100%" stop-color="#fee140"/>
+    </radialGradient>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="textShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+
+    <linearGradient id="lineFill" gradientUnits="userSpaceOnUse" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="55%" stop-color="#d3fdf1"/>
+      <stop offset="100%" stop-color="#38f9d7"/>
+    </linearGradient>
+    <linearGradient id="lineFill2" gradientUnits="userSpaceOnUse" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#d3fdf1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Pixel Interploted edges -->
+  <g id="lines" stroke="url(#lineFill)" stroke-width="3" stroke-linecap="round">
+    <line x1="0" y1="400" x2="400" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+  </g>
+  <g id="lines" stroke="url(#lineFill2)" stroke-width="3" stroke-linecap="round">
+    <line x1="400" y1="400" x2="400" y2="578" />
+    <line x1="400" y1="400" x2="500" y2="400" />
+  </g>
+
+  <!-- Large -->
+  <g filter="url(#softShadow)" fill="url(#gradLarge)">
+    <rect x="0" y="0" width="100" height="100"/>
+    <rect x="400" y="0" width="100" height="100"/>
+    <rect x="0" y="400" width="100" height="100"/>
+    <rect x="400" y="400" width="100" height="100"/>
+  </g>
+
+  <!-- Half -->
+  <g filter="url(#softShadow)" fill="url(#gradHalf)">
+    <rect x="225" y="25" width="50" height="50"/>
+    <rect x="25" y="225" width="50" height="50"/>
+    <rect x="225" y="225" width="50" height="50"/>
+    <rect x="425" y="225" width="50" height="50"/>
+    <rect x="225" y="425" width="50" height="50"/>
+    <rect x="90" y="525.5" width="50" height="50"/>
+  </g>
+
+  <!-- Quarter -->
+  <g filter="url(#softShadow)"
+     fill="url(#gradQuarter)"
+     stroke="#aaa"
+     stroke-width="1"
+     paint-order="stroke">
+
+    <rect x="137.5" y="37.5" width="25" height="25"/>
+    <rect x="337.5" y="37.5" width="25" height="25"/>
+
+    <rect x="37.5" y="137.5" width="25" height="25"/>
+    <rect x="137.5" y="137.5" width="25" height="25"/>
+    <rect x="237.5" y="137.5" width="25" height="25"/>
+    <rect x="337.5" y="137.5" width="25" height="25"/>
+    <rect x="437.5" y="137.5" width="25" height="25"/>
+
+    <rect x="137.5" y="237.5" width="25" height="25"/>
+    <rect x="337.5" y="237.5" width="25" height="25"/>
+
+    <rect x="37.5" y="337.5" width="25" height="25"/>
+    <rect x="137.5" y="337.5" width="25" height="25"/>
+    <rect x="237.5" y="337.5" width="25" height="25"/>
+    <rect x="337.5" y="337.5" width="25" height="25"/>
+    <rect x="437.5" y="337.5" width="25" height="25"/>
+
+    <rect x="137.5" y="437.5" width="25" height="25"/>
+    <rect x="337.5" y="437.5" width="25" height="25"/>
+
+    <rect x="285" y="540" width="25" height="25"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="203" y="560" text-anchor="middle"
+        font-size="30" font-weight="700"
+        stroke="#006" stroke-width="2"
+        paint-order="stroke"
+        font-family="Arial, sans-serif"
+        fill="#c7d2fe"
+        filter="url(#textShadow)">
+    1/2 Size
+  </text>
+
+  <text x="375" y="560" text-anchor="middle"
+        font-size="30" font-weight="700"
+        stroke="#110" stroke-width="2"
+        paint-order="stroke"
+        font-family="Arial, sans-serif"
+        fill="#fdbc5e"
+        filter="url(#textShadow)">
+    1/4 Size
+  </text>
+</svg>

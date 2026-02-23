@@ -1452,55 +1452,54 @@
                 <img src="files/mpmemc/Block-Spitting-Stage-Two.png" alt="Block-Spitting-Stage-Two" class="img-medium">
                 <p class="text-gray-side">图：根据动态搜索与补偿所得，完成宏块到块的细分</p>
             </div>
-            <div class="row">
-                <div id="LR-UD-003" class="col-8 align-items-center">
-                    <table class="table-center">
-                        <tr>
-                            <th class="px-3">编码器（官方）</th>
-                            <th class="px-3">平面——块类型</th>
-                            <th class="px-3">范围精度</th>
-                            <th class="px-3">插值方法</th>
-                        </tr>
-                        <tr class="t-light-gray">
-                            <td class="px-1">x264</td>
-                            <td class="px-1">亮度 Y</td>
-                            <td class="px-1">½ 像素（hpel）</td>
-                            <td class="px-1">6 tap FIR</td>
-                        </tr>
-                        <tr>
-                            <td class="px-1">x264</td>
-                            <td class="px-1">亮度 Y</td>
-                            <td class="px-1">¼ 像素（qpel）</td>
-                            <td class="px-1">双线性插值（Bi-lerp）</td>
-                        </tr>
-                        <tr class="t-light-gray">
-                            <td class="px-1">x264</td>
-                            <td class="px-1">色度 C</td>
-                            <td class="px-1">hpel+qpel</td>
-                            <td class="px-1">上下左右加权平均</td>
-                        </tr>
-                        <tr>
-                            <td class="px-1">x265</td>
-                            <td class="px-1">亮度 Y</td>
-                            <td class="px-1">hpel+qpel</td>
-                            <td class="px-1">上下左右加权平均</td>
-                        </tr>
-                        <tr class="t-light-gray">
-                            <td class="px-1">x265</td>
-                            <td class="px-1">亮度 Y</td>
-                            <td class="px-1">¼像素（qpel）</td>
-                            <td class="px-1">两种 7tap FIR</td>
-                        </tr>
-                        <tr>
-                            <td class="px-1">x265</td>
-                            <td class="px-1">色度 C</td>
-                            <td class="px-1">hpel+qpel</td>
-                            <td class="px-1">4tap FIR</td>
-                        </tr>
-                    </table>
-                    <p class="text-gray-side mt-0">表：x264/5 的 hpel~qpel FIR 插值放大算法使用。x264 使用 6tap FIR 滤镜，x265 使用 8tap、7tap 和 4tap FIR 滤镜。</p>
-                </div>
-                <img loading="lazy" src="files/mpmemc/hpel-qpel-interpolation.png" alt="hpel qpel interpolation" id="LR-UD-004" class="img-small img-right col-4 mb-auto" >
+
+            <table class="table-center">
+                <tr>
+                    <th class="px-3">编码器（官方）</th>
+                    <th class="px-3">平面——块类型</th>
+                    <th class="px-3">范围精度</th>
+                    <th class="px-3">插值方法</th>
+                </tr>
+                <tr class="t-light-gray">
+                    <td class="px-1">x264</td>
+                    <td class="px-1">亮度 Y</td>
+                    <td class="px-1">½ 像素（hpel）</td>
+                    <td class="px-1">6 tap FIR</td>
+                </tr>
+                <tr>
+                    <td class="px-1">x264</td>
+                    <td class="px-1">亮度 Y</td>
+                    <td class="px-1">¼ 像素（qpel）</td>
+                    <td class="px-1">双线性插值（Bi-lerp）</td>
+                </tr>
+                <tr class="t-light-gray">
+                    <td class="px-1">x264</td>
+                    <td class="px-1">色度 C</td>
+                    <td class="px-1">hpel+qpel</td>
+                    <td class="px-1">上下左右加权平均</td>
+                </tr>
+                <tr>
+                    <td class="px-1">x265</td>
+                    <td class="px-1">亮度 Y</td>
+                    <td class="px-1">hpel+qpel</td>
+                    <td class="px-1">上下左右加权平均</td>
+                </tr>
+                <tr class="t-light-gray">
+                    <td class="px-1">x265</td>
+                    <td class="px-1">亮度 Y</td>
+                    <td class="px-1">¼像素（qpel）</td>
+                    <td class="px-1">两种 7tap FIR</td>
+                </tr>
+                <tr>
+                    <td class="px-1">x265</td>
+                    <td class="px-1">色度 C</td>
+                    <td class="px-1">hpel+qpel</td>
+                    <td class="px-1">4tap FIR</td>
+                </tr>
+            </table>
+            <p class="text-gray-side mt-0">表：x264/5 的 hpel~qpel FIR 插值放大算法使用。x264 使用 6tap FIR 滤镜，x265 使用 8tap、7tap 和 4tap FIR 滤镜。</p>
+            <div class="align-items-center">
+                <img loading="lazy" src="files/mpmemc/hpel-qpel-interpolation-v2.svg" alt="hpel qpel interpolation" class="img-small">
             </div>
 
             <code class="code-bold">--subme</code>
