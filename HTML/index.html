@@ -1544,7 +1544,7 @@
                 </div>
                 <img src="files/transform-quantization/DCT-Block.png" alt="DCT-Block" id="LR-UD-006" class="img-small img-right col-2 mb-auto">
             </div>
-            <p>变换处理使得信号得以被翻译解构，例如可以将音频转换为 MIDI 键位，再整理出纯钢琴的“Vocaloid”音乐：<a href="https://soundcloud.com/jc-gong-avoe/vocaloid_nanoscore-1171002022">Soundcloud</a> / <a href="https://www.acfun.cn/v/ac31342770">AcFun</a> / <a href="https://b23.tv/sPkURQv">哔哩哔哩</a>。</p>
+            <p class="text-gray-side">注：变换处理使得信号得以被翻译解构，例如可以将音频转换为 MIDI 键位，再整理出纯钢琴的“Vocaloid”音乐：<a href="https://soundcloud.com/jc-gong-avoe/vocaloid_nanoscore-1171002022">Soundcloud</a> / <a href="https://www.acfun.cn/v/ac31342770">AcFun</a> / <a href="https://b23.tv/sPkURQv">哔哩哔哩</a>。</p>
 
 
             <h3>量化</h3>
@@ -1922,7 +1922,7 @@
             </div>
 
             <h3>感知对比度掩蔽现象（Perceptual contrast masking）</h3>
-            <p class="text-gray-side pl-5 m-0">注：这不是摄影后期的对比度遮罩法 Contrast Masking</p>
+            <p class="text-gray-side">注：这不是摄影后期/PhotoShop 的对比度遮罩处理法（Contrast Masking）</p>
             <p>自然界中的动物通过打乱自身外形的线条轮廓，从而在不调整自身颜色，不改变体温，不变更习性，不妥协体型大小的情况下做到的外形伪装。这种效应的参数包括：</p>
             <ul>
                 <li>空间距离差异——两种特征的距离越近，掩蔽越强</li>
@@ -1943,7 +1943,9 @@
                 <li><b>和：</b>平方后的值求和，得到整体的平方误差/二维误差</li>
                 <li><b>均：</b>除以样本数的平均计算，得到方差</li>
             </ol>
-            <div class="overflow-auto"><span class="text-blue-math">\[ \text{Variance} = \frac{\text{SSE}_{Pixels_{Macroblock}} - (\text{SAD}_{Macroblock})^2}{Pixels_{Macroblock}} = \frac{\text{SSE}_{Pixels_{Macroblock}} - (\text{SAD}_{Macroblock})^2}{256} \]</span></div>
+            <div class="overflow-auto"><span class="text-blue-math">\[
+                \text{Variance} = \frac{\text{SSE}_{Pixels_{Macroblock}} - (\text{SAD}_{Macroblock})^2}{Pixels_{Macroblock}} = \frac{\text{SSE}_{Pixels_{Macroblock}} - (\text{SAD}_{Macroblock})^2}{256}
+            \]</span></div>
 
             <div class="align-items-center">
                 <img loading="lazy" src="files/rate-control/Variance-Visualization.png" alt="VAQ Source" class="img-medium" >
@@ -1967,22 +1969,16 @@
            
             <h2 id="h2-11">模式决策、环路滤镜</h2>
             <p>由于 AVC x264 的环路滤镜步骤中只有去块，所以准确的说就是“去块失真滤镜/去块滤镜（Deblock）”。之所以称作“环路/Loop”是因为编码器会在这之后进行模式决策（Mode Decision）来检查编码选用的帧内、帧间模式是否合理，于是，概念图中就出现了一条走向“倒过来回到动态搜索步骤结束为止”之后的“环路”路径，而这条路径上恰好有去块滤镜。当然，在更先进的视频编码上还有更多可用的滤镜，因此称为“滤镜组”。</p>
-            <p>环路滤镜作用在重建帧（编码结果）上，使其成为未来帧的参考。模式决策（帧内模式、运动矢量、块划分等）都在编码当前块时完成，不会在环路滤镜处理之后再复查和修改。但编码器在决策时通常会基于“滤镜处理后的参考帧”来进行运动估计和预测，以保证和解码端一致。模式决策对于帧内编码的块/帧尤其重要，因为帧内预测的模式是根据重建（并滤波）后的左侧、左上和顶部相邻像素做的（信息有限），因此很可能还有更好的编码模式可取。对于帧间编码的块，其前后的参考帧已经进行过滤镜处理（因为编解码顺序不同于播放顺序），因此编码器可以安全地根据处理后的参考帧复查动态向量。</p>
+            <p>环路滤镜的效果作用于重建帧（编码结果）上——成为未来帧的参考。模式决策（帧内模式、运动矢量、块划分等）都在编码当前块时完成，不会在环路滤镜处理之后再复查和修改。但编码器在决策时通常会基于“滤镜处理后的参考帧”来进行运动估计和预测，以保证和解码端一致。模式决策对于帧内编码的块/帧尤其重要，因为帧内预测的模式是根据重建（并滤波）后的左侧、左上和顶部相邻像素做的（信息有限），因此很可能还有更好的编码模式可取。对于帧间编码的块，其前后的参考帧已经进行过滤镜处理（因为编解码顺序不同于播放顺序），因此编码器可以安全地根据处理后的参考帧复查动态向量。</p>
             <ol>
                 <li><b>整合动态搜索与补偿可能性</b>：
-                    <ul>
-                        <li>计算并收集每种帧内，帧间预测模式的率失真分数（于下文解释）</li>
-                    </ul>
+                    <ul><li>计算并收集每种帧内，帧间预测模式的率失真分数（见下方说明）</li></ul>
                 </li>
                 <li><b>整合分块参考量化可能性</b>：
-                    <ul>
-                        <li>计算并收集每种细分块方案（4x4，8x8，16x16），参考帧长度，量化强度下的率失真分数</li>
-                    </ul>
+                    <ul><li>计算并收集每种细分块方案（4x4，8x8，16x16），参考帧长度，量化强度下的率失真分数</li></ul>
                 </li>
                 <li><b>压缩方案定制</b>：
-                    <ul>
-                        <li>选择码率最小的压缩方案并不是最优解，因此找出率失真分数最高的方案集，得到码率与画质最为平衡的方案</li>
-                    </ul>
+                    <ul><li>选择码率最小的压缩方案并不是最优解，因此找出率失真分数最高的方案集，得到码率与画质最为平衡的方案</li></ul>
                 </li>
             </ol>
             <!-- x264 教程副本，更改需手动同步 { -->
@@ -2094,14 +2090,8 @@
             <h4>宏块树 Macroblock-Tree/帧间逐宏块自适应量化</h4>
             <p>宏块的构成可以被视作“帧间预测 + 帧内预测 + 预测残差”三张图。如果宏块的绝大多数内容数据（如 70%）来自于帧间预测，而这个宏块里当前 GOP 末尾（关键帧间隔 <code>--keyint</code>）很近了，那么它的出现时间自然是配不上它的码率的。如果找出并降低这种宏块的码率（指定该宏块的量化值/量化强度 +N），省下来的码率分给 GOP 开头和中间的宏块，码率的分配就更均衡，整个视频的画质都会提升了。宏块树就是实现这种码率分配优化的算法，本质上这是一种时间域的逐宏块自适应量化，且在现代视频编码中被重用。详见 <a href="http://lazybing.github.io/blog/2021/06/22/h264-rate-control-algorithm/">x264 率控制算法</a> 及 <a href="https://huyunf.github.io/blogs/2017/12/06/x264_slice_type_decision/MBtree paper.pdf">MBTree 论文</a>。</p>
             <p>由于宏块树的步骤位于前瞻进程（Lookahead）中，而前瞻进程位于动态搜索和运动补偿之前，且前瞻进程只使用半分辨率的视频帧，因此，此时的宏块树会额外尝试一些简单的帧内和帧间预测。</p>
-            <ul>
-                <li>注：帧间参考代价只能小于等于帧内参考代价，类似于（同视频下的）P 帧体积不应大于 I 帧
-                    <ul class="text-smaller">
-                        <li>若出现帧间参考代价大于帧内参考代价的情况，就重设为「帧间参考代价等于帧内参考代价」</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>宏块帧内和帧间的参考代价记为 <span class="text-blue-math">\(\text{Cost}_{intra}\)</span> 和 <span class="text-blue-math">\(\text{Cost}_{inter}\)</span>，通过 Lookahead 中以下“搜索”步骤得到：</p>
+            <p class="text-gray-side">注：帧间参考代价只能小于等于帧内参考代价，类似于（同视频下的）P 帧体积不应大于 I 帧；若出现帧间参考代价大于帧内参考代价的情况，就重设为「帧间参考代价等于帧内参考代价」</p>
+            <p>宏块帧内和帧间的参考代价记为 <span class="text-blue-math">\(\text{Cost}_{intra}\)</span> 和 <span class="text-blue-math">\(\text{Cost}_{inter}\)</span>，通过前瞻进程（Lookahead）中以下“搜索”步骤得到：</p>
             <ul>
                 <li><b>简单帧内预测/宏块自身信息量预测：</b>尝试水平和垂直模式
                     <ul class="text-smaller">
@@ -2133,7 +2123,7 @@
                 <li><b>设定：</b>各个宏块自身代价与参考代价的比率，再从 100% 减掉这个比率，得到给其他宏块参考的信息比率
                     <span class="text-blue-math"> \[ \text{propagate}_{fraction}=1-\left(\frac{\text{Cost}_{intra}}{\text{Cost}_{inter}}\right) \]</span>
                 </li>
-                <li><b>设定：</b>各个宏块传播到下游宏块的代价量 = 给其他宏块参考的信息比率 × 溯块总代价
+                <li><b>设定：</b>各个宏块内容传播给下游宏块的代价 = 给其他宏块参考的信息比率 × 溯块总代价
                     <span class="text-blue-math"> \[ \text{Propagate}_{amount} = \text{Propagate}_{fraction} \times (\text{Cost}_{intra} + \text{Cost}_{propagate}) \]</span>
                     <ul class="text-smaller">
                         <li><span class="text-blue-math">\( \text{Propagate}_{fraction} \)</span> 越小，传播到下游宏块的信息量就越少</li>
