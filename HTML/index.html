@@ -53,12 +53,9 @@
         <div class="container-mobile rounded-9 border-main">
             <h2 id="h2-1">必备常识</h2>
 
-            <h3>电脑</h3>
-            <p>早期的电脑由中央处理器（CPU），内存（RAM、ROM）和一些专用芯片组成。芯片之间通过 PCB 板上的总线 Bus 互联，从而完成各种计算任务。这种 PCB 板同时负责了一套独立电脑系统的供电、信号、扩展等特性，而被特指为主板 Mainboard 或母板 Motherboard。随着技术发展，CPU 的结构和功能被优化，出现了多核心、独立缓存、共享缓存、64 bit 寄存器（相对于 8、16、32 bit）、以及更快更通用的总线（内存总线、USB、PCIE、SATA）、ROM 演化为 BIOS。电脑的外设也更加丰富，例如鼠标，高清显示器，独立显卡等。这些设备在不同功耗、便携性等限制条件下，从原来的大型机、小型机演化出了服务器、工作站、个人电脑、笔记本、智能手机、平板电脑/掌机等统称为电脑的设备。</p>
-
-            <h3>性能</h3>
-            <p>主要分为<span class="text-blue-emph">处理速度（算力）</span>和<span class="text-blue-emph">数据传输速度（带宽）</span>，部分情况下还注重<span class="text-blue-emph">响应速度（延迟）</span>。看视频时最常见的画面卡顿问题就来自于网速不足；而如果是体积超大的无损视频，那么就算是本地播放，也可能会因为硬盘或/和内存带宽不足而复现这种卡顿；再者，如果让性能太弱的 CPU 播放高度压缩后的视频，那么即使没有带宽问题，视频也会因为算力不足而出现画面卡顿的问题。</p>
-            <p>数据与 CPU 核心的距离会产生巨大的延迟差异。这些延迟往往会因为同步，分阶段读取，安全验证检查等行为而积微成著，变得显而易见：</p>
+            <h3>性能是什么</h3>
+            <p>主要分为<span class="text-blue-emph">处理速度（算力）</span>和<span class="text-blue-emph">数据传输速度（带宽）</span>，部分情况下还注重<span class="text-blue-emph">操作响应速度（延迟）</span>。播放视频时，画面卡顿问题往往来自于某一处的带宽不足（如网速、硬盘带宽）；而另一种情况下，如果让性能太弱的 CPU 播放高度压缩后的视频，那么即使带宽充足，视频也会因为算力不足而卡顿。</p>
+            <p>数据与 CPU 核心的距离，以及使用的数据传输协议会导致巨大的延迟差异。这些延迟往往会因为同步，分阶段读取，安全检查等行为而积微成著，变得显而易见：</p>
             <table class="table-center text-smaller">
                 <thead>
                     <tr>
@@ -106,7 +103,7 @@
                 </tbody>
             </table>
             
-            <h4>读写性能</h4>
+            <h4>读写性能（IO）</h4>
             <p>硬盘或闪存芯片上的数据写入速度普遍比内存慢得多，但容量大且断电不丢失，是本地读写性能的主要瓶颈。实际读写性能通常分为两类，其性能差异相当于一次 vs. 成千上万次操作的区别。</p>
             <ul>
                 <li><b>连续读写</b>：适用于大文件，速度快</li>
@@ -114,13 +111,13 @@
             </ul>
             <p>视频文件属于大文件，而且封装格式将音轨、字幕等数据紧密存放，因此即便是连续读写性能较低的存储介质（如闪存），其带宽也能保证播放流畅</p>
 
-            <h3>数据的定义</h3>
+            <h3>数据是什么</h3>
             <p>一句话就是一段数据。计算机上的数据由电信号构成，分为模拟（电压代表大小）和数字（0、1 代表开关）两种。通过将计算机编程，人们根据不同的 0、1 长度以及组合，为 CPU 定义了操作内存、硬盘等存储设备的（读写）能力，从而使得更上层的操作系统和程序能够定义和使用更抽象化的数据（如坐标，像素值）等形式，才得以让电脑显示画面，播放视频。</p>
 
-            <h3>元数据 Metadata</h3>
+            <h3>元数据（Metadata）</h3>
             <p>描述数据的数据，例如零食的包装袋上会印有零食的参考图和名称。如果所有的包装都是白色，那么用户就无法找到想吃的零食。而电脑只能根据每个格式元数据（一般为文件后缀名）预设的“默认程序”来打开视频文件（设置错误时，也强行让设定的程序打开），而视频播放器也需要编码格式、亮度、对比度、帧率等元数据才能正确的播放视频。</p>
 
-            <h3>编解码</h3>
+            <h3>编解码是什么</h3>
             <ul class="overflow-auto">
                 <li><b>编码 Encoding</b>：是数据格式的转换。压缩是编码的一种形式</li>
                 <li><b>解码 Decoding</b>：是将被压缩的信号还原或播放的解压缩。一般来说，压缩程度越高，解码速度越慢</li>
@@ -1908,31 +1905,43 @@
             </ul>
             <!-- 额外参数（与 x265 教程不同）：-->
             <code class="code-bold">--slow-firstpass</code>
-            <p class="font-monospace pl-5 m-0 overflow-auto">&lt;开关&gt;pass1 里自动关闭以下提速，或自动提高以下参数的强度，以保证 pass1 模式中 CRF 模式计算量化值的准确度：<code>no-8x8dct me dia partitions none ref 1 subme &lt;=2 trellis 0 fast-pskip</code>，可手动覆盖为强度更高的参数</p>
+            <p class="font-monospace pl-5 m-0 overflow-auto">&lt;开关&gt;pass1 里自动关闭以下提速，或自动提高以下参数的强度，以保证 pass1 模式中 CRF 模式计算量化值的准确度：<code>--no-8x8dct --me dia --partitions none ref 1 --subme &lt;=2 --trellis 0 --fast-pskip</code>，可手动覆盖为强度更高的参数</p>
 
             <h2 id="h2-10">自适应量化</h2>
-            <p>一种利用感知对比度掩蔽现象的帧内分块码率重分配方法。</p>
+            <p>一种利用感知对比度掩蔽现象的帧内分块码率调整，将更多码率分配到“更重要”地方的方法。</p>
+            <div class="align-items-center">
+                <img loading="lazy" src="files/rate-control/VAQ-Source3.webp" alt="VAQ Source" class="img-medium" >
+                <img loading="lazy" src="files/rate-control/VAQ-Source3-Mode1.png" alt="VAQ Mode1 Map" class="img-medium" >
+                <img loading="lazy" src="files/rate-control/VAQ-Source3-Mode1-Stat.png" alt="VAQ Mode1 Map" class="img-medium" >
+                <p class="text-gray-side">图：简单根据纹理（Mode 1）分布/密度增减量化值；来源及更多图例：<a href="https://github.com/Khrysoberyl/vs_AQVisualizer">Github/Khrysoberyl</a></p>
+            </div>
 
-            <h3>感知对比度掩蔽现象 Perceptual contrast masking</h3>
+            <h3>感知对比度掩蔽现象（Perceptual contrast masking）</h3>
             <p>类似于亮度与响度掩蔽。空间频率高，纹理复杂的画面能够掩蔽频率低，纹理简单的画面内容，如自然界中的动物通过“打乱”自身外形的线条和纹理细节，从而在不改变颜色，体温和体型大小的情况下实现的可见光伪装。这种效应的参数包括：</p>
             <ul>
                 <li>空间距离差异——两种特征的距离越近，掩蔽越强</li>
                 <li>特征差异——两种特征的摆放角度，空间频率越接近，掩蔽越强</li>
                 <li>对比度差异——两种特征的对比度越大，掩蔽越强</li>
             </ul>
-            <p>这种现象代表了量化失真可以被图像中的纹理所掩蔽的规律，因此纹理越复杂且对比度越高，人眼就越难以察觉到量化失真（尤其是动态纹理，如海面的变化）。自适应量化通过逐分块地微调量化强度，从而实现这种基于感知的量化 Perceptual based quantization 更合理地分配码率。</p>
+            <p>这种现象代表了量化失真可以被图像中的纹理所掩蔽的规律，因此纹理越复杂且对比度越高，人眼就越难以察觉到量化失真（尤其是动态纹理，如海面的变化）。自适应量化通过逐分块地微调量化强度，从而实现这种基于感知的量化（Perceptual based quantization）更合理地分配码率。</p>
             <p>简单地说，只要量化失真处的像素值变化程度不大于纹理像素值变化的程度即可。这种方法虽然常用在视频编码中，但对比度感知现象的原理尚不明确——如果观众仔细看就会发现失真。</p>
 
-            <h3>方差 Variance</h3>
-            <p>方差表示数据样本相对于整体平均值的离散程度，通过差→方→和→均的计算顺序，以偏差之和窥数据之衡。这里的偏差就是上述的像素值对比度，通过“和→均”的平均法来均摊偏差程度，防止少数较大的偏差影响整体；而“差→方”平衡了前者对结果值的缩小，另一方面对高差距处加权，以影响判断结果不倾向于完全平均，从而更符合数据的实际变化情况。计算如下：</p>
+            <h3>方差（Variance）</h3>
+            <p>表示数据样本相对于整体平均值的离散程度。有时平均值，包括加权平均值指标并不可靠，或者说我们需要知道平均值到底有多可靠。因此有了这种“差→方→和→均”式计算，即“以偏差之和窥数据之衡”。</p>
             <span class="text-blue-math">\[ \sigma^{2}=\frac{\sum_{i=1}^{N} (x_{i}-\overline{x})^{2}}{N} \]</span>
             <ol class="font-monospace pl-5 text-smaller">
-                <li>每个数据样本减去整体平均值，得到差值</li>
-                <li>差值进行平方以放大误差，并消除负值差距的影响</li>
-                <li>平方后的值求和，得到总平方误差</li>
-                <li>总平方误差除以样本数得到方差</li>
+                <li><b>差：</b>每个数据样本减去整体平均值，得到各个差值（距离）</li>
+                <li><b>方：</b>各个差值逐一取平方以放大误差，顺便使得各个差值被绝对值化
+                    <ul><li>在此处同样可以直接取绝对值而取平方，但这样做会失去微分兼容性，且极端值的影响更难体现出来</li></ul></li>
+                <li><b>和：</b>平方后的值求和，得到整体的平方误差/二维误差</li>
+                <li><b>均：</b>除以样本数的平均计算，得到方差</li>
             </ol>
             <div class="overflow-auto"><span class="text-blue-math">\[ \text{Variance} = \frac{\text{SSE}_{Pixels_{Macroblock}} - (\text{SAD}_{Macroblock})^2}{Pixels_{Macroblock}} = \frac{\text{SSE}_{Pixels_{Macroblock}} - (\text{SAD}_{Macroblock})^2}{256} \]</span></div>
+
+            <div class="align-items-center">
+                <img loading="lazy" src="files/rate-control/Variance-Visualization.png" alt="VAQ Source" class="img-medium" >
+                <p class="text-gray-side">图：实际上，“取平方”在视觉上也更加合理，例如这个 GPU 渲染流程中，上半部分使用柱状图，下半部分相同但取了平方，使得时间维度的影响偏差（视觉面积）一目了然；来源：<a href="https://www.youtube.com/watch?v=0njXa-OknIs">YouTube/Threat Interactive</a></p>
+            </div>
 
             <code class="code-bold">--aq-mode</code>
             <p class="font-monospace pl-5 m-0 overflow-auto">&lt;整数 0~3&gt;据原画和 CRF/ABR 强度设定，码率不足时分配细分块量化强度的策略</p>
