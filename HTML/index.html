@@ -1010,7 +1010,7 @@
                 <p class="text-smaller">通过认知大量训练数据，在其中找出更高维度规律的情况下，利用这些规律推断像素值。计算量极大，准确度时高时低。</p>
             </div>
 
-            <h3>宽高比 Aspect Ratio</h3>
+            <h3>宽高比（Aspect Ratio）</h3>
             <p>矩形的最小两边的比例，被中国航空航天称为展弦比。被忽略的“长”是屏幕相对人眼的 z 轴。而换算长短边如 16:9 高 720 的方形像素视频，其宽就是 <span class="text-blue-math">\( 720 \div 9 \times 16 = 1280 \)</span>。</p>
             <div class="align-items-center">
                 <img src="files/basics/Aspect-Ratio-16-by-9.png" alt="Aspect-Ratio-16-by-9" class="img-medium">
@@ -1018,19 +1018,15 @@
             </div>
             <p>图片格式一般支持奇数分辨率，视频一般仅支持偶数分辨率。</p>
 
-            <h3>高/低频 High/Low frequency</h3>
-            <p>假设函数 <span class="text-blue-math">\(y=\cos\left(ux\right)\)</span>。可以调节变量 u，如 <span class="text-blue-math">\(y=\cos\left(2x\right)\)</span>，<span class="text-blue-math">\(y=\cos\left(3x\right)\)</span>  等。u 越大则余弦函数周期越短——频率越高；u 越小则余弦函数周期越长——频率越低。</p>
-            <p>变换算法可以将这个 u 作为输出数轴，原始波形中从低频到高频的分量都会被准确地排列进来。</p>
-
-            <h3>程序的交互界面 Interface</h3>
-            <p><b>图形界面交互 Graphic user interface（GUI、UI）</b>：通过图形元素（如按钮、滑块、菜单等）进行用户交互的界面设计。随着程序复杂度的增加，设计出好用的界面会变得更加困难。因此，只有在利润丰厚、注重美学设计、且拥有设计人才的行业才会推出外观精美的 GUI。然而，好看不等于好用。在视频压制相关的任务中，加了图形界面反而会引出一系列问题，例如关键功能或信息缺失、报错信息丢失、内容溢出窗口、操作流程复杂化等问题。</p>
+            <h3>程序的交互界面（Interface）</h3>
+            <p><b>图形界面交互（Graphic user interface、GUI、UI）</b>：通过图形元素（如按钮、滑块、菜单等）进行用户交互的界面设计。随着程序复杂度的增加，设计出好用的界面会变得更加困难。因此，只有在利润丰厚、注重美学设计、且拥有设计人才的行业才会推出外观精美的 GUI。然而，好看不等于好用。在视频压制相关的任务中，加了图形界面反而会引出一系列问题，例如关键功能或信息缺失、报错信息丢失、内容溢出窗口、操作流程复杂化等问题。</p>
             <div class="align-items-center">
                 <img src="files/basics/FL-Studio-GUI-Demonstration.png" alt="FL-Studio-GUI-Demonstration" class="img-medium">
                 <p class="text-gray-side mt-0">图：音频插件宿主软件 FL Studio，外加一堆免费和“免费”音频插件随便摆放的外观</p>
                 <img src="files/basics/XAMPP-GUI-Demonstration.png" alt="XAMPP-GUI-Demonstration" class="img-medium">
                 <p class="text-gray-side mt-0">图：网页服务器宿主软件 XAMPP 的 GUI（左下为 CLI），作为跨行业对比</p>
             </div>
-            <p><b>命令行交互 Commandline interface（CLI）</b>：在如 Terminal、Bash、CMD 和 PowerShell 的终端环境中，用户可以手动输入命令并按回车键查看结果。通常，只要输出结果有一定的文本排版，就可以轻松阅读。随着使用的增加，CLI 可能反而会变得比 GUI 更方便。然而，由于某些命令太长，而且需要储存变量，因此为了简化操作，人们会将其写作批处理、Shell 等命令脚本文件。例如<a href="https://nazorip.site/archives/835/">PowerShell 一站式系统硬件检测</a>的脚本。</p>
+            <p><b>命令行交互（Commandline interface、CLI）</b>：在如 Terminal、Bash、CMD 和 PowerShell 的终端环境中，用户可以手动输入命令并按回车键查看结果。通常，只要输出结果有一定的文本排版，就可以轻松阅读。随着使用的增加，CLI 可能反而会变得比 GUI 更方便。然而，由于某些命令太长，而且需要储存变量，因此为了简化操作，人们会将其写作批处理、Shell 等命令脚本文件。例如<a href="https://nazorip.site/archives/835/">PowerShell 一站式系统硬件检测</a>的脚本。</p>
             <div class="align-items-center">
                 <img src="files/basics/Ubuntu-Terminal.png" alt="Ubuntu-Terminal" class="img-medium">
                 <p class="text-gray-side mt-0">图：Ubuntu（Linux 系统）的终端命令交互程序窗口。</p>
@@ -1223,7 +1219,7 @@
                 <li>情况 2：特点如此，推荐<span class="text-blue-emph">这个值</span></li>
             </ul>
 
-            <h3>管道 Pipeline</h3>
+            <h3>管道（Pipe）</h3>
             <p>一种在进程/软件之间通信的操作系统机制。在命令行中写作通过链接符 <span class="text-blue-emph">|</span> 串联起来是两段命令，而两段命令间的数据一般由默认输出 standard output（stdout）和默认输入 standard input（stdin）实现，因此不需要手动添加输出和输入命令。报错则为 stderr。在涉及到文件输入输出的程序时则需要手动指定“-”符号到程序的输入命令中，以取代文件的输入。</p>
             <h4>串流管道 Stream-based pipe</h4>
             <p>Windows CMD、Linux Bash 的管道模式，用于传输纯数据，其中的程序同步运行，持续地传输上游输出到下游。适用于串流作业和处理流数据，包括视音频和文本流。</p>
@@ -1234,7 +1230,7 @@
                 <li>将文本流传给排列功能，将每行字符的顺序改为“文件名 哈希值”</li>
                 <li>将文本流传给排序功能，按照文件名的数字重排行号并忽略空格，得到按顺序排版的“文件名 哈希值”</li>
             </ul>
-            <h4>对象管道 Object-based pipe</h4>
+            <h4>对象管道（Object-based pipe）</h4>
             <p>PowerShell 的管道模式，用于传输结构化的对象（变量本身），而不是纯数据。其中的程序按顺序接力，一个程序/协议/函数跑完后再打开下一个。适用于处理对象化数据（面向对象的应用），所以不适合用于处理视音频流文件。</p>
             <h4>指定默认输入和报错</h4>
             <code>J:\ffmpeg.exe -i D:\文件夹\源.mp4 -an -f yuv4mpegpipe - | J:\x264-r3206.exe --y4m - --output D:\文件夹\测试.h264 <span class="text-blue-emph">2> D:\文件夹\报错.txt</span></code>
@@ -1261,21 +1257,21 @@
 
             <h2 id="h2-3">数据结构</h2>
             <h3>帧的结构</h3>
-            <p>在 Advanced Video Coding AVC 中，帧的下级结构按照分辨率大小分为条带组 slice group → 条带 slice → 宏块 Macroblock → 块 block。从大小和功能上细分为：</p>
+            <p>在 Advanced Video Coding AVC 中，帧的下级结构按照分辨率大小分为条带组 → 条带 → 宏块  → 块 / Slice group → Slice → Macroblock → Block。从大小和功能上细分为：</p>
             <ul>
-                <li><b>帧 frame</b>：
+                <li><b>帧（Frame）</b>：
                     <ul class="text-smaller">
                         <li><b>关键帧</b>：I/i 帧</li>
                         <li><b>参考帧</b>：P 帧、B/b 帧</li>
                     </ul>
                 </li>
-                <li><b>条带组 slice group</b>：
+                <li><b>条带组（Slice group）</b>：
                     <ul class="text-smaller">
                         <li>由灵活宏块排序 Flexible Macroblock Ordering FMO 划分</li>
                         <li>优化解码延迟，提高压缩和参考错误恢复能力</li>
                     </ul>
                 </li>
-                <li><b>条带 slice</b>：
+                <li><b>条带（Slice）</b>：
                     <ul class="text-smaller">
                         <li><b>关键帧下</b>：I/i 条带</li>
                         <li><b>参考帧下</b>：I/i 条带、P 条带、B/b 条带</li>
@@ -1283,12 +1279,12 @@
                         <li>冗余条带：提高数据抗丢包，抗损坏的能力</li>
                     </ul>
                 </li>
-                <li><b>宏块 Macroblock</b>：
+                <li><b>宏块（Macroblock）</b>：
                     <ul class="text-smaller">
                         <li>粗分块，在动态搜索与补偿前完成，面积为 16x16 像素</li>
                     </ul>
                 </li>
-                <li><b>块 Block</b>：
+                <li><b>块（Block）</b>：
                     <ul class="text-smaller">
                         <li>细分块，在动态搜索与补偿后完成，面积为 8x8 或 4x4 像素</li>
                         <li><b>关键帧下</b>：帧内预测块、帧间预测块</li>
@@ -1432,14 +1428,14 @@
             </ol>
             <p class="text-gray-side">注：为了简化所以写作 <span class="text-blue-math">\(T(D(x,y))\)</span>，实际这样相当于每加一个像素值就要变换一遍</p>
 
-            <h2 id="h2-7">运动补偿 Motion Compensation（MC）</h2>
+            <h2 id="h2-7">运动补偿（Motion Compensation、MC）</h2>
             <p>整数像素动态搜索虽看起来很准，但精度终归有限，只能算是“粗加工预测”；直接使用整数动态向量会导致纹理细节和物件边缘信息的丢失。为此，编码器需要对向量“精加工”——对齐到插值出的 half-pixel / hpel / ½ 像素，及 quarter-pixel / qpel / ¼ 像素，使预测画面（指 PU、PB）的残差变小，与输入源画面更一致。</p>
             <p class="text-gray-side">注：虽然看起来只有一个子像素补偿，但这不妨碍运动补偿作为一个完整独立的步骤存在。此外，在 AV1 标准中，运动补偿就不只有一种了。</p>
             
             <h3>整数像素运动补偿</h3>
             <p>视频编码中同动态搜索（ME）。</p>
             
-            <h3>子像素运动补偿 Sub-pel Motion Compensation</h3>
+            <h3>子像素运动补偿（Subpixel Motion Compensation）</h3>
             <ol>
                 <li>线性插值参考帧（有限冲击响应滤镜 FIR），分别生成上采样/放大 2x 和 4x 的副本</li>
                 <li>以整数向量落点为起点搜索放大副本的位置，从而找出率失真代价最小的子像素动态向量位置：
@@ -1537,10 +1533,16 @@
 
             <h2 id="h2-8">变换</h2>
             <div class="row">
-                <p id="LR-UD-003" class="col-10">模拟信号转换为数字信号的主要步骤之一——将音量、亮度、温度、压力等信号整理为低频到高频的单一信号/波形分量。具体来说，这个过程根据要处理的信号和用途不同，会使用傅里叶变换，小波变换，和 x264/5 使用的二维离散余弦变换 2D Discrete cosine transform。二维离散余弦变换利用预制的二维波形模具，通过穷举加减将源信号逐步分解成不同频率的平面波形，并合成变换块。<span class="text-gray-side">图：缩放到 8x8 的波形分布，由于 cos(x) 的波形范围是 -1~1，所以图中的黑色到白色并不是 0~255 或 16~235，而是 -1~1</span> </p>
+                <p id="LR-UD-003" class="col-10">模拟信号转换为数字信号的主要步骤之一——将音量、亮度、温度、压力等信号/信息被抽离为<i>单一结构于各种形态下的复杂组成</i>，如果这个单一结构是波形，那么就是不同振幅、频率和相位（即各种波形形态变化）的复杂组成：</p>
+                <ul>
+                    <li><b>振幅：</b>波峰到波谷的高度距离，越大则声音越响，图像明暗处差距越大</li>
+                    <li><b>频率：</b>单位时间下的波周期次数（如演奏家按下琴键的次数每秒），越高则能表示的音高越高，图像越锐利</li>
+                    <li><b>相位：</b>波形在时间/空间的位置，决定了与其它波形的叠加和干涉程度</li>
+                </ul>
                 <img src="files/transform-quantization/DCT-Block.png" alt="DCT-Block" id="LR-UD-004" class="img-small img-right col-2 mb-auto">
             </div>
-            <p>变换的过程中，“DCT 像素”称为系子 coefficients。这些系子的强度可以是负值，表示反相的波形；也可以是小数，表示低强度的波形（但因为计算机浮点计算慢于整数计算，所以一般仅用于演示）。变换块左上角的系数是直流 DC 分量，代表整体亮度水平，其余的系数是交流 AC 分量，表示图像中的细节和纹理信息。</p>
+            <p>变换处理使得信号得以被翻译解构，例如可以将音频转换为 MIDI 键位，再整理出纯钢琴的“Vocaloid”音乐：<a href="https://soundcloud.com/jc-gong-avoe/vocaloid_nanoscore-1171002022">Soundcloud</a> / <a href="https://www.acfun.cn/v/ac31342770">AcFun</a> / <a href="https://b23.tv/sPkURQv">哔哩哔哩</a>。</p>
+            <p>变换的过程中，“DCT 像素”或许会被称为系子（coefficients、即分量、有咎的一些值）。这些系子的强度可以是负值（反相波形）；也可以是小数，表示微调下的波形（但因为计算机浮点计算慢于整数计算，所以一般仅用于演示）。变换块左上角的系数是直流（DC、Direct current）分量，代表整体亮度水平，其余的系数是交流（AC、Alternate current）分量，表示图像中的细节和纹理信息。</p>
 
             <h3>量化</h3>
             <p>根据压缩强度给出一个除数或矩阵数组，将变换结果的每个值除以这个除数或矩阵中同位的值，只保留和使用商来解码播放，从而实现压缩。这步操作是压缩中画面损失最大的步骤。</p>
