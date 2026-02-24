@@ -1371,16 +1371,16 @@
             <code class="code-bold">--frames</code>
             <p class="font-monospace pl-5 m-0 overflow-auto">&lt;整数，默认全部&gt;一共压缩多少帧</p>
             <code class="code-bold">--fps</code>
-            <p class="font-monospace pl-5 m-0 overflow-auto">&lt;整数或除法&gt;设定输出视频帧率，只有源视频帧率错误才用得到。制动该参数后会自动开启 <code>-force-cfr</code></p>
+            <p class="font-monospace pl-5 m-0 overflow-auto">&lt;整数或除法，自动开启 <code>--force-cfr</code>&gt;设定输出视频帧率，除非有指定的必要（如源视频为 RAW YUV 或帧率错误），否则无需配置。</p>
             <code class="code-bold">--force-cfr</code>
             <p class="font-monospace pl-5 m-0 overflow-auto">&lt;开关&gt;强制设定视频帧到整数时间码，可能用于对齐小数帧率的误差（如 23.976 或 24000/1001 变成 23.977）用</p>
             <code class="code-bold">--fullrange</code>
             <p class="font-monospace pl-5 m-0 overflow-auto">&lt;开关，7mod x264 自动&gt;启用 0~255 色彩范围，而不是默认的 16~235。视频内容永远不在使用有限色域设备/软件/视频网站下播放下可以考虑开启</p>
 
             <h2 id="h2-5">动态预测（Motion Prediction、MP）</h2>
-            <p>在参考帧（P-B 帧）的预测块 Prediction Block 上，动态搜索（ME）之前，起到<i>提供动态搜索起点</i>功能的预测算法。x264 使用了 <code>--direct</code> 指定。x265 中则使用了更高级的 AMVP + Merge 算法。</p>
-            <p>视频里往往会有占据画面不小的物件朝着一处平移，在视频帧中表现为“某个区域的分块拥有高度相似的运动向量”。这些重复性的动态向量分布规律肉眼可见，而动态搜索只能通过不断地计算差异而一个一个方向和大小地把向量给试出来。这显然不如通过预测而快速地找出一组方向与大小（然后让整数像素动态搜索从这里开始微调到整数像素精度）直截了当。</p>
-            <p>由于动态向量预测得到的向量本身就已经足够靠谱，因此编码器会以“预测动态向量（PMV）+ 动态向量差（MVD）”的形式记录每个帧间块的动态信息，再冗余掉相同的预测动态向量，从而进一步提高压缩。纵然一支动态向量的信息不多，但放眼到整个视频的所有帧间参考时，质变也就产生了。</p>
+            <p>在单/双向参考帧（P/B/b 帧）中的预测块（Prediction Block）上，动态搜索（ME）开始前起到<i>提供动态搜索起点</i>功能的预测算法。x264 使用了 <code>--direct</code> 指定。x265 中则使用了更高级的 AMVP + Merge 算法。</p>
+            <p>视频里往往会有占据画面不小的物件朝着一处平移，在视频帧中表现为“某个区域的分块拥有高度相似的运动向量”。这些重复性的动态向量分布规律肉眼可见，但动态搜索算法只会一味的盲找，因此我们提前给动态搜索一个搜索起点，就可以直截了当地降本增效了。</p>
+            <p>实际上，动态预测得到的向量往往相当靠谱，因此编码器会以“预测动态向量（PMV）+ 动态向量差（MVD）”的形式记录每个帧间块的动态信息，再冗余掉相同的预测动态向量，从而进一步提高压缩。纵然一支动态向量的信息不多，但放眼到整个视频的所有帧间参考时，质变也就产生了。</p>
             <code class="code-bold">--direct</code>
             <p class="font-monospace pl-5 m-0 overflow-auto">&lt;temporal/spatial/auto&gt; 指定动态搜索判断方式的参数，除直播和低性能设备录屏外建议 auto</p>
 
