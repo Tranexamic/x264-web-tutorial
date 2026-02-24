@@ -1,0 +1,18 @@
+{
+  "name": "x264-web-tutorial-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:markdown": "node scripts/build-markdown.js",
+    "test:markdown": "node scripts/test-markdown-split.js"
+  },
+  "dependencies": {
+    "hast-util-to-text": "^4.0.2",
+    "rehype-parse": "^9.0.1",
+    "rehype-remark": "^10.0.1",
+    "remark-stringify": "^11.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0",
+    "remark-gfm": "^4.0.0"
+  }
+}
